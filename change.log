@@ -1,8 +1,8 @@
 
-UNRELEASED
+0.0.2
 
   * packaging: add deb/rpm/msi support
-  * README: udpate install section
+  * README: update install section
   * release: update script
 
   - mh-cbon <mh-cbon@users.noreply.github.com>
@@ -13,10 +13,7 @@ UNRELEASED
 
 0.0.1
 
-  * improve release script
-  * go fmt
-  * init
-  * Initial commit
+  * Initial release
 
   - mh-cbon <mh-cbon@users.noreply.github.com>
 
