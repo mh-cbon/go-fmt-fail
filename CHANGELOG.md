@@ -1,5 +1,18 @@
 # Changelog - go-fmt-fail
 
+### 0.0.3
+
+__Changes__
+
+- packaging: remove glide support in build scripts
+
+__Contributors__
+
+- mh-cbon
+
+Released by mh-cbon, Sat 23 Jul 2016
+______________
+
 ### 0.0.2
 
 __Changes__
