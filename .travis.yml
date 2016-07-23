@@ -15,13 +15,11 @@ before_install:
   - sudo apt-get install build-essential lintian -y
   - mkdir -p ${GOPATH}/bin
   - cd ~
-  - curl https://glide.sh/get | sh
   - curl -L https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh | GH=mh-cbon/changelog sh -xe
   - curl -L https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh | GH=mh-cbon/go-bin-deb sh -xe
 
 install:
   - cd $GOPATH/src/github.com/mh-cbon/$PROJECT_NAME
-  - glide install
   - go install
 
 script: echo "pass"
