@@ -1,0 +1,52 @@
+sudo: required
+
+services:
+  - docker
+
+language: go
+go:
+  - tip
+
+env:
+- PROJECT_NAME=go-fmt-fail
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install build-essential lintian -y
+  - mkdir -p ${GOPATH}/bin
+  - cd ~
+  - curl https://glide.sh/get | sh
+  - curl -L https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh | GH=mh-cbon/changelog sh -xe
+  - curl -L https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh | GH=mh-cbon/go-bin-deb sh -xe
+
+install:
+  - cd $GOPATH/src/github.com/mh-cbon/$PROJECT_NAME
+  - glide install
+  - go install
+
+script: echo "pass"
+
+before_deploy:
+  - mkdir -p build/{386,amd64}
+  - mkdir -p pkg-build/{386,amd64}
+  - GOOS=linux GOARCH=386 go build -o build/386/$PROJECT_NAME main.go
+  - GOOS=linux GOARCH=amd64 go build -o build/amd64/$PROJECT_NAME main.go
+  - go-bin-deb generate -a 386 --version ${TRAVIS_TAG} -w pkg-build/386/ -o ${TRAVIS_BUILD_DIR}/$PROJECT_NAME-386.deb
+  - go-bin-deb generate -a amd64 --version ${TRAVIS_TAG} -w pkg-build/amd64/ -o ${TRAVIS_BUILD_DIR}/$PROJECT_NAME-amd64.deb
+  - rm -fr pkg-build/
+  - mkdir -p pkg-build/{386,amd64}
+  - docker run -v $PWD:/docker fedora /bin/sh -c "cd /docker && sh ./docker.sh ${TRAVIS_TAG} $PROJECT_NAME"
+  - sudo chown travis:travis $PROJECT_NAME-{386,amd64}.rpm
+
+deploy:
+  provider: releases
+  api_key:
+    secure: Dy/lqa6C5TeE51Kk2xYVdHiHcv/r86Hay7ALxIcFGQ4xGZiNv/S7SrbJ+6YlRaPpVkmYo6YUpN0hsy3LXlbzV2RtBujj/VOoWtesFFjLmPo3e7I5d+eQMA7GsUpaCJLm5ZpgTiZwr+3zezsO0x8/2SCW2BGCqFd/09T2vFwZohGMPmmOOmxrtTEJ5H/h7YcimxJE5URD/xz+7+TPkxEpDnWqeHIiGPSJJUGMg2ngK7vkR/ZWwvOiUYg9i8jP1tPGUMQdVY8yeOUD1eoR9NnFqM1tA2aKp3PoWUiwoSsAecu2Zg7Po5WftIEU4+S0TvJpPWLMCJAWU8MTdEXhZ0khvV1FCW6IjDzVW9WDmL5kn0eYkrKqlopTLnx3C+VIrMXjnhKJ+CeiypGw2HbilmO1yYcpB+pWJGq9gXvxGd2jVDdRcO28rNxaOrDPebyO7i8lDbLPh+VfxzANQYlUNd7ir4VAk3vLrftc6UFp6we9ESx1oUlYEsUMZug8xNSRN4EvOouTJL4zbLwvgjcROkk8H9/BOxuFqwIjXxcKPZBAD8bkbsWtZMrXNWfoFmKCQbA9Am7BikFyMhnVOiVTPY49aydMhcFdjXYGwmEqH03AJ4f7kyh/lvGqTyWD83G7QIUDoqHlC3uA+kyYpkyaU7a6cG57wahubxEVpkUj/wFy2Wo=
+  file:
+    - $PROJECT_NAME-386.deb
+    - $PROJECT_NAME-amd64.deb
+    - $PROJECT_NAME-386.rpm
+    - $PROJECT_NAME-amd64.rpm
+  skip_cleanup: true
+  on:
+    tags: true
