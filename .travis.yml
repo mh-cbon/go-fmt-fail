@@ -9,7 +9,7 @@ go:
 
 env:
   global:
-    - MYAPP=archive
+    - MYAPP=go-fmt-fail
     - MYEMAIL=mh-cbon@users.noreply.github.com
     - secure: vQ8uqwzDhCBIGHUQOPpBcHBQ1/tySE8GtK+4C87G0W7iIfStdUJsJHuaIdaoNTt6mAZ7QPGD1o+5TDWm2RhWLoViiiuhSej/YutxbRBr1a1NmwaQwSXOtmmoluoVHJHeS0Oj1ct08Vi1v6wATcZOQz83q1rIwhaJ7t//BF1SuQ9cMoBtaVUGcBcp0XweDU8oi8qOW8CtFPO4HymOnWSSjHSkp/gV9duYg6M30T8NrgF2JEx9sPA9v23KEU/ySeF6tiheB9TZrsQQwupWau5yGOwQBJOXToYgcW6NyktClTms7Jpg4OGJXyYOvfQJYWtGCIhfxcXjhq+aNZNcpM7Bq0dL5303g7tpyI6qhCDVvbTC8X79bpwBX7ANgVRJiYIx3pQwErh9ut6dOGUy0Xi11+6NOSPw5Lme6SqPM3ISaD+f/g4UFCvrib0KyQXL364F7ot6O8mjrrmFc1sMUMP/KhtFpt3O535eYHXYMXkx+vjQOckaQT4oNPMByhwPp2vmAxUR/0Z6uwuZCTS3nOViWuWfMJhquOTc4TTjMHY8csLQHKje4eopEHMdyihZVlW3ZdgnIr3aRc4+dtk4Z18aLyulMdP9lojawfJqT8OhDgij/fpcpKAsakmi8ZHSMCjbN21COSnJj64gXP3HHXpoCR6H2AQEh3qMcM6Avivfqn4=
 
