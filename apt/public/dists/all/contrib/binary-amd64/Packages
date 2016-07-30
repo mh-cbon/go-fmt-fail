@@ -1,0 +1,36 @@
+Package: go-fmt-fail
+Priority: extra
+Section: unknown
+Installed-Size: 1.9 kB
+Maintainer: mh-cbon <mh-cbon@users.noreply.github.com>
+Architecture: amd64
+Source: go-fmt-fail
+Version: 0.0.5
+Filename: pool/contrib/g/go-fmt-fail/go-fmt-fail-0.0.5_amd64.deb
+Size: 500806
+MD5sum: 35d4a7b3f90dde1c0b20558760efabfb
+SHA1: 3c0b6a70dcf64572c6b34df70ddfd9d01f1ce36a
+SHA256: 9768fe12299227d8e558624b577f7790663916a43d2f878c5b36ee2c1158a874
+SHA512: 89dbffd3fb22a298bb11ad9d84208e6cbd6b7d849f9054536e7d42c15c2ef8f2deb3cafe99504d08ef8802d74d8825c7515edbb9baa58d84d8ceb50770288f37
+Description: go fmt fails when a file is formatted
+Package-Type: deb
+Homepage: http://github.com/mh-cbon/go-fmt-fail
+
+Package: go-fmt-fail
+Priority: extra
+Section: unknown
+Installed-Size: 1.9 kB
+Maintainer: mh-cbon <mh-cbon@users.noreply.github.com>
+Architecture: amd64
+Source: go-fmt-fail
+Version: 0.0.3
+Filename: pool/contrib/g/go-fmt-fail/go-fmt-fail-0.0.3_amd64.deb
+Size: 500830
+MD5sum: 459979a755008f422c614450425b711a
+SHA1: 92bceaa5086a949fc7382eede49bc53ca976ee74
+SHA256: c850ee4ed7316d7e450e2bc9aa037c3da4a632e3b814f98b5066c72ab0d3218d
+SHA512: 961882a8c5d5519169e7b2d39b8bdb6e8db6ad87cb1cfaff9d602d24da595456f4226d626942dd6a5089d0fc442595329d8cd8ed39750cb53d9096e4986cb26e
+Description: go fmt fails when a file is formatted
+Homepage: http://github.com/mh-cbon/go-fmt-fail
+Package-Type: deb
+
