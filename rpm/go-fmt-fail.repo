@@ -1,0 +1,6 @@
+[go-fmt-fail]
+name=go fmt fails when a file is formatted
+baseurl=https://mh-cbon.github.io/go-fmt-fail/rpm/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgcheck=0
