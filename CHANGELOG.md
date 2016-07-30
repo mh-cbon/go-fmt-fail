@@ -1,5 +1,19 @@
 # Changelog - go-fmt-fail
 
+### 0.0.5
+
+__Changes__
+
+- travis: fix gh_token
+
+__Contributors__
+
+- mh-cbon
+
+Released by mh-cbon, Sat 30 Jul 2016 -
+[see the diff](https://github.com/mh-cbon/go-fmt-fail/compare/0.0.4...0.0.5#diff)
+______________
+
 ### 0.0.4
 
 __Changes__
