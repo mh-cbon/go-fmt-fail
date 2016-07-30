@@ -22,5 +22,11 @@
       }
     ]
   },
-  "shortcuts": {}
+  "shortcuts": {},
+  "choco": {
+    "description": "go fmt fails when a file is formatted",
+    "project-url": "https://github.com/mh-cbon/go-fmt-fail",
+    "tags": "go",
+    "license-url": "https://github.com/mh-cbon/go-fmt-fail/blob/master/LICENSE"
+  }
 }
